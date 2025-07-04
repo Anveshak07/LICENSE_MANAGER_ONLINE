@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>License Validator</title>
+    <style>
+        body { font-family: Arial; margin: 50px; }
+        .container { max-width: 400px; margin: auto; }
+        input, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        .result {
+            padding: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Validate License</h2>
+        <form method="POST" action="/validate">
+            <input type="text" name="license_key" placeholder="Enter License Key" required>
+            <input type="text" name="machine_id" placeholder="Enter Machine ID" required>
+            <button type="submit">Validate</button>
+        </form>
+        {% if result %}
+            <div class="result">{{ result }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
